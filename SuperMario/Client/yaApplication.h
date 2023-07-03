@@ -17,7 +17,7 @@ namespace ya
 
 			object()
 				:
-				pos(640.f, 380.f),
+				pos(100.f, 50.f),
 				dir(0.f,0.f),
 				group(0)
 			{
