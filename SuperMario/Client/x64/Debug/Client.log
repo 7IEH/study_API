@@ -1,10 +1,26 @@
 ﻿  yaApplication.cpp
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(180,84): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(180,62): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(180,45): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(180,31): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(184,97): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(184,73): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(184,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(184,34): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(124,41): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(125,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(175,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(176,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(186,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(187,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(193,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(194,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(200,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(201,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(207,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(208,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(214,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(215,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(221,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(222,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(235,81): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(235,59): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(235,42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(235,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(239,94): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(239,70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(239,49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\C++\API\학원\SuperMario\Client\yaApplication.cpp(239,31): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Client.vcxproj -> D:\C++\API\학원\SuperMario\x64\Debug\Client.exe

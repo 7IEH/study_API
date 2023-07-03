@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Client.h"
 #include "yaApplication.h"
+#include "yaMath.h"
 
 
 #define MAX_LOADSTRING 100
@@ -148,15 +149,17 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    // 윈도우를 설정하는 함수
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-       CW_USEDEFAULT, 0, 1280, 720, nullptr, nullptr, hInstance, nullptr);
+       CW_USEDEFAULT, 0, 1280, 800, nullptr, nullptr, hInstance, nullptr);
+
+   RECT size;
 
    application.Initialize(hWnd);
-
+   GetClientRect(hWnd, &size);
+   application.SetWindowSize(ya::math::Vector2(size.right, size.bottom));
    if (!hWnd)
    {
       return FALSE;
    }
-
    // 위에서 만든 윈도우에 대한 설정을 보여주기 위한 함수
    ShowWindow(hWnd, nCmdShow);
    // 만든 윈도우에 대한 업데이트를 위한 함수
@@ -177,6 +180,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    static RECT rt;
     switch (message)
     {
     case WM_COMMAND:
@@ -196,6 +200,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
+    case WM_SIZE:
+        GetClientRect(hWnd, &rt);
+        application.SetWindowSize(ya::math::Vector2(rt.right, rt.bottom));
     case WM_PAINT:
         {
             PAINTSTRUCT ps;

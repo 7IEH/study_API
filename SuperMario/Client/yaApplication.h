@@ -12,13 +12,13 @@ namespace ya
 		struct object
 		{
 			ya::math::Vector2 pos;
-			int vect;
+			ya::math::Vector2 dir;
 			int group;
 
 			object()
 				:
 				pos(640.f, 380.f),
-				vect(0),
+				dir(0.f,0.f),
 				group(0)
 			{
 
@@ -29,6 +29,11 @@ namespace ya
 		void Run();
 		void Update();
 		void Render();
+		void SetWindowSize(math::Vector2 other) 
+		{ 
+			mVwindowSize.x = other.x;
+			mVwindowSize.y = other.y;
+		}
 
 	private:
 		HWND mHwnd;
@@ -36,6 +41,8 @@ namespace ya
 		
 		HDC mHmemdc;
 		HBITMAP mHbit;
+
+		math::Vector2 mVwindowSize;
 
 		math::Vector2 mPlayerPos;
 		std::vector<object> mObject;
