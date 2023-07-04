@@ -10,7 +10,6 @@ namespace ya
 		, mHdc(nullptr)
 		, mHbit(nullptr)
 		, mHmemdc(nullptr)
-		, mPlayerPos(10.f, 10.f)
 		, mVwindowSize(0.f, 0.f)
 	{
 	}
@@ -25,16 +24,19 @@ namespace ya
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
-		mVwindowSize=math::Vector2(1280.f, 760.f);
 
+		RECT rect = { 0,0,1280,720 };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+		SetWindowPos(hwnd, nullptr, 0, 0, rect.right - rect.left, rect.bottom - rect.top, 0);
+		ShowWindow(hwnd,true);
 		mHmemdc = (HDC)CreateCompatibleDC(mHdc);
-		mHbit = (HBITMAP)CreateCompatibleBitmap(mHdc, 1280, 780);
+		mHbit = (HBITMAP)CreateCompatibleBitmap(mHdc, 1280, 720);
 
 		HBITMAP hOldBit = (HBITMAP)SelectObject(mHmemdc, mHbit);
 		DeleteObject(hOldBit);
 
-		Input::Intialize();
 		Time::Intialize();
+		Input::Intialize();
 	}
 
 	void yaApplication::Run()
@@ -67,189 +69,14 @@ namespace ya
 		{
 			mPlayerPos.x += 300.f * Time::DeltaTime();
 		}
-
-		static float TimeCheck = 0.f;
-		TimeCheck += Time::DeltaTime();
-		static int flag = 0;
-
-		int vect[8][5][2] =
-		{
-			{
-				0,1,
-				1,1,
-				1,0
-			},
-			{
-				-1,1,
-				0,1,
-				1,1
-			},
-			{
-				-1,0,
-				-1,1,
-				0,1
-			},
-			{
-				-1,-1,
-				-1,0,
-				-1,1
-			},
-			{
-				0,-1,
-				-1,-1,
-				-1,0
-			},
-			{
-				1,-1,
-				0,-1,
-				-1,-1
-			},
-			{
-				1,0,
-				1,-1,
-				0,-1
-			},
-			{
-				1,1,
-				1,0,
-				1,-1
-			}
-		};
-
-		static int count = 0;
-		static int x = 100;
-		if (TimeCheck >= 2.f && count<=5)
-		{
-			object temp;
-			count++;
-			temp.dir.x = vect[temp.group][flag][0];
-			temp.dir.y = vect[temp.group][flag++][1];
-			temp.pos.x = x;
-			mObject.push_back(temp);
-			TimeCheck = 0.f;
-			x += 100;
-			if (x == 1300)
-			{
-				x = 100;
-			}
-
-			if (flag == 3)
-				flag = 0;
-		}
-
-		
-		
-		srand((UINT)time(NULL));
-		int Irand = 0;
-
-		for (size_t i = 0; i < mObject.size(); i++)
-		{
-			for (size_t j = 0; j < mObject.size(); j++)
-			{
-				if (j == i)
-					continue;
-
-				if (((mObject[j].pos.x <= mObject[i].pos.x &&
-					mObject[j].pos.x + 100.f >= mObject[i].pos.x) &&
-					(mObject[j].pos.y <= mObject[i].pos.y &&
-					mObject[j].pos.y + 100.f >= mObject[i].pos.y))||
-					((mObject[j].pos.x <= mObject[i].pos.x+100.f &&
-						mObject[j].pos.x + 100.f >= mObject[i].pos.x+100.f) &&
-						(mObject[j].pos.y <= mObject[i].pos.y &&
-							mObject[j].pos.y + 100.f >= mObject[i].pos.y))||
-					((mObject[j].pos.x <= mObject[i].pos.x &&
-						mObject[j].pos.x + 100.f >= mObject[i].pos.x) &&
-						(mObject[j].pos.y <= mObject[i].pos.y+100.f &&
-							mObject[j].pos.y + 100.f >= mObject[i].pos.y+100.f))||
-					((mObject[j].pos.x <= mObject[i].pos.x+100.f &&
-						mObject[j].pos.x + 100.f >= mObject[i].pos.x+100.f) &&
-						(mObject[j].pos.y <= mObject[i].pos.y+100.f &&
-							mObject[j].pos.y + 100.f >= mObject[i].pos.y+100.f)))
-				{
-					mObject[i].dir.x *= -1.f;
-					mObject[i].dir.y *= -1.f;
-					mObject[j].dir.x *= -1.f;
-					mObject[j].dir.y *= -1.f;
-					mObject[i].pos.x += mObject[i].dir.x * 300.f * Time::DeltaTime();
-					mObject[i].pos.y += mObject[i].dir.y * 300.f * Time::DeltaTime();
-					mObject[j].pos.x += mObject[j].dir.x * 300.f * Time::DeltaTime();
-					mObject[j].pos.y += mObject[j].dir.y * 300.f * Time::DeltaTime();
-				}
-			}
-			if (mObject[i].pos.x >= mVwindowSize.x-100.f && mObject[i].pos.y <= 0.f)
-			{
-				mObject[i].group = 2;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.x <= 0.f && mObject[i].pos.y <= 0.f)
-			{
-				mObject[i].group = 0;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.y >= mVwindowSize.y-100.f && mObject[i].pos.x >= mVwindowSize.x - 100.f)
-			{
-				mObject[i].group = 4;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.y >= mVwindowSize.y - 100.f && mObject[i].pos.x <= 0.f)
-			{
-				mObject[i].group = 6;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.x >= mVwindowSize.x - 100.f)
-			{
-				mObject[i].group = 3;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.x <= 0.f)
-			{
-				mObject[i].group = 7;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.y <= 0.f)
-			{
-				mObject[i].group = 1;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			else if (mObject[i].pos.y >= mVwindowSize.y - 100.f)
-			{
-				mObject[i].group = 5;
-				Irand = rand() % 3;
-				mObject[i].dir.x = vect[mObject[i].group][Irand][0];
-				mObject[i].dir.y = vect[mObject[i].group][Irand][1];
-			}
-			mObject[i].pos.x += mObject[i].dir.x * 300.f * Time::DeltaTime();
-			mObject[i].pos.y += mObject[i].dir.y * 300.f * Time::DeltaTime();
-		}	
-}
-
-void yaApplication::Render()
-{
-	// rewrite
-	// Rectangle(mHdc, 0, 0, 1280, 760);
-	Time::Render(mHmemdc);
-	Rectangle(mHdc, mPlayerPos.x, mPlayerPos.y, mPlayerPos.x + 100.f, mPlayerPos.y + 100.f);
-
-	for (size_t i = 0; i < mObject.size(); i++)
-	{
-		Ellipse(mHdc, mObject[i].pos.x, mObject[i].pos.y, mObject[i].pos.x + 100, mObject[i].pos.y + 100);
 	}
 
-	//BitBlt(mHdc, 0, 0, 1280, 760, mHmemdc, 0, 0, SRCCOPY);
-}
-
+	void yaApplication::Render()
+	{
+		// rewrite
+		Rectangle(mHmemdc, -1, -1, mVwindowSize.x+1, mVwindowSize.y+1);
+		Time::Render(mHmemdc);
+		Rectangle(mHmemdc, mPlayerPos.x, mPlayerPos.y, mPlayerPos.x + 100.f, mPlayerPos.y + 100.f);
+		BitBlt(mHdc, 0, 0, 1280, 720, mHmemdc, 0, 0, SRCCOPY);
+	}
 }
