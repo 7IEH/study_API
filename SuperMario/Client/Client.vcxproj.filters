@@ -22,7 +22,28 @@
     <Filter Include="Engine\Input">
       <UniqueIdentifier>{3ddd89af-b71c-4d46-b885-25d48ff393aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Time">
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{7887212c-2821-4c8c-a333-26c90ae530df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Entity">
+      <UniqueIdentifier>{e3e205dc-972d-4900-a5e7-ff1443844c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Layer">
+      <UniqueIdentifier>{94c49251-3dae-43bd-916d-67898f002e59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject">
+      <UniqueIdentifier>{2c91ccc9-c153-4efb-9362-1c8e52b647df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component">
+      <UniqueIdentifier>{78b2fb12-53b9-4a3f-8117-a2e4316d3b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Transform">
+      <UniqueIdentifier>{6cce7b6b-ee36-40c7-ab6f-750dbfe1b6c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\SpriteRenderer">
+      <UniqueIdentifier>{b710e31a-05aa-4c9b-9b6c-009de3ea82c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common\Time">
       <UniqueIdentifier>{3cbb731d-63ab-43bf-9482-eb84d8b1d8f8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -52,7 +73,28 @@
       <Filter>Engine\Input</Filter>
     </ClInclude>
     <ClInclude Include="yaTime.h">
-      <Filter>Engine\Time</Filter>
+      <Filter>Engine\Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="yaScene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaEntity.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="yaLayer.h">
+      <Filter>Engine\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="yaGameObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="yaComponent.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="yaTransform.h">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="yaSpriteRenderer.h">
+      <Filter>Engine\Component\SpriteRenderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,7 +119,28 @@
       <Filter>Engine\Input</Filter>
     </ClCompile>
     <ClCompile Include="yaTime.cpp">
-      <Filter>Engine\Time</Filter>
+      <Filter>Engine\Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="yaScene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaEntity.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="yaLayer.cpp">
+      <Filter>Engine\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="yaGameObject.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="yaComponent.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="yaTransform.cpp">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="yaSpriteRenderer.cpp">
+      <Filter>Engine\Component\SpriteRenderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

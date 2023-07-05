@@ -1,7 +1,4 @@
 #include "yaApplication.h"
-#include "yaInput.h"
-#include "yaTime.h"
-#include<time.h>
 
 namespace ya
 {
@@ -11,6 +8,7 @@ namespace ya
 		, mHbit(nullptr)
 		, mHmemdc(nullptr)
 		, mVwindowSize(0.f, 0.f)
+		, mScene{}
 	{
 	}
 
@@ -37,7 +35,11 @@ namespace ya
 
 		Time::Intialize();
 		Input::Intialize();
-	}
+		Scene EnterScene;
+		GameObject* mPlayer = new GameObject;
+		EnterScene.SetLayer(enums::eLayerType::Player, mPlayer);
+		mScene.push_back(EnterScene);
+;	}
 
 	void yaApplication::Run()
 	{
@@ -50,24 +52,9 @@ namespace ya
 	{
 		Time::Update();
 		Input::Update();
-		if (Input::GetKey(eKeyCode::A).state == eKeyState::PRESSED)
+		for (size_t i = 0; i < mScene.size(); i++)
 		{
-			mPlayerPos.x -= 300.f * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::W).state == eKeyState::PRESSED)
-		{
-			mPlayerPos.y -= 300.f * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::S).state == eKeyState::PRESSED)
-		{
-			mPlayerPos.y += 300.f * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::D).state == eKeyState::PRESSED)
-		{
-			mPlayerPos.x += 300.f * Time::DeltaTime();
+			mScene[i].Update();
 		}
 	}
 
@@ -76,7 +63,10 @@ namespace ya
 		// rewrite
 		Rectangle(mHmemdc, -1, -1, mVwindowSize.x+1, mVwindowSize.y+1);
 		Time::Render(mHmemdc);
-		Rectangle(mHmemdc, mPlayerPos.x, mPlayerPos.y, mPlayerPos.x + 100.f, mPlayerPos.y + 100.f);
+		for (size_t i = 0; i < mScene.size(); i++)
+		{
+			mScene[i].Render(mHmemdc);
+		}
 		BitBlt(mHdc, 0, 0, 1280, 720, mHmemdc, 0, 0, SRCCOPY);
 	}
 }

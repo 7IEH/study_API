@@ -1,5 +1,9 @@
 #pragma once
 #include "Commoninclude.h"
+#include "yaInput.h"
+#include "yaTime.h"
+#include "yaScene.h"
+#include "yaGameObject.h"
 
 namespace ya
 {
@@ -28,7 +32,7 @@ namespace ya
 
 		math::Vector2 mVwindowSize;
 
-		math::Vector2 mPlayerPos;
+		std::vector<Scene> mScene;
 	};
 }
 
