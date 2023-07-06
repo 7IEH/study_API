@@ -1,9 +1,9 @@
 #pragma once
-#include"yaEntity.h"
-#include"yaComponent.h"
+#include "yaEntity.h"
+#include "yaComponent.h"
 #include "yaTransform.h"
 #include "yaSpriteRenderer.h"
-#include"Commoninclude.h"
+#include "Commoninclude.h"
 
 namespace ya
 {
@@ -28,6 +28,16 @@ namespace ya
 					return temp;
 			}
 			return temp;
+		}
+
+		template <typename T>
+		T* AddComponent()
+		{
+			T* comp = new T();
+			mComponents.push_back(comp);
+			comp->SetOwner(this);
+
+			return comp;
 		}
 
 	private:

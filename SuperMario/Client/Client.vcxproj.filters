@@ -46,6 +46,21 @@
     <Filter Include="Engine\Common\Time">
       <UniqueIdentifier>{3cbb731d-63ab-43bf-9482-eb84d8b1d8f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{d7201d6c-b5d7-4750-8ce8-81e0858cb447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject">
+      <UniqueIdentifier>{f9424cfe-5c0f-411a-85f0-da2f48f4809e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Player">
+      <UniqueIdentifier>{266bbf13-3a53-4a03-9142-cb15fa27ec77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Scene">
+      <UniqueIdentifier>{a8d45878-1c51-4c33-ba5b-c3d4e15cc919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\SceneMgr">
+      <UniqueIdentifier>{32769ed7-fe51-44fb-b03a-a00d0e21bc3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -96,6 +111,18 @@
     <ClInclude Include="yaSpriteRenderer.h">
       <Filter>Engine\Component\SpriteRenderer</Filter>
     </ClInclude>
+    <ClInclude Include="yaSceneMgr.h">
+      <Filter>Engine\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="EHObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="yaPlayer.h">
+      <Filter>Contents\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="yaTitleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">
@@ -141,6 +168,15 @@
     </ClCompile>
     <ClCompile Include="yaSpriteRenderer.cpp">
       <Filter>Engine\Component\SpriteRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="yaSceneMgr.cpp">
+      <Filter>Engine\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="yaPlayer.cpp">
+      <Filter>Contents\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="yaTitleScene.cpp">
+      <Filter>Contents\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

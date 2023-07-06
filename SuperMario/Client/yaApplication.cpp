@@ -1,4 +1,5 @@
 #include "yaApplication.h"
+#include "yaSceneMgr.h"
 
 namespace ya
 {
@@ -35,10 +36,7 @@ namespace ya
 
 		Time::Intialize();
 		Input::Intialize();
-		Scene EnterScene;
-		GameObject* mPlayer = new GameObject;
-		EnterScene.SetLayer(enums::eLayerType::Player, mPlayer);
-		mScene.push_back(EnterScene);
+		SceneMgr::Initialize();
 ;	}
 
 	void yaApplication::Run()
@@ -52,10 +50,7 @@ namespace ya
 	{
 		Time::Update();
 		Input::Update();
-		for (size_t i = 0; i < mScene.size(); i++)
-		{
-			mScene[i].Update();
-		}
+		SceneMgr::Update();
 	}
 
 	void yaApplication::Render()
@@ -63,10 +58,7 @@ namespace ya
 		// rewrite
 		Rectangle(mHmemdc, -1, -1, mVwindowSize.x+1, mVwindowSize.y+1);
 		Time::Render(mHmemdc);
-		for (size_t i = 0; i < mScene.size(); i++)
-		{
-			mScene[i].Render(mHmemdc);
-		}
+		SceneMgr::Render(mHmemdc);
 		BitBlt(mHdc, 0, 0, 1280, 720, mHmemdc, 0, 0, SRCCOPY);
 	}
 }

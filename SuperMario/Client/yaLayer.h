@@ -15,7 +15,7 @@ namespace ya
 		virtual void Update();
 		virtual void Render(HDC hdc);
 
-		void SetObject(GameObject* obj)
+		void AddObject(GameObject* obj)
 		{
 			mGameObjects.push_back(obj);
 		}

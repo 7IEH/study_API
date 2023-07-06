@@ -9,7 +9,7 @@ namespace ya
 	Scene::~Scene()
 	{
 	}
-	void Scene::Intialize()
+	void Scene::Initialize()
 	{
 	}
 	void Scene::Update()

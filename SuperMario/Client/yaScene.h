@@ -12,13 +12,13 @@ namespace ya
 		Scene();
 		virtual ~Scene();
 
-		virtual void Intialize();
+		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
 
-		void SetLayer(eLayerType layertype, GameObject* object)
+		void AddLayer(eLayerType layertype, GameObject* object)
 		{
-			mLayers[(UINT)layertype].SetObject(object);
+			mLayers[(UINT)layertype].AddObject(object);
 		}
 
 	private:

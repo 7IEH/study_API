@@ -7,13 +7,14 @@ namespace ya
 	class Transform :public Component
 	{
 	public:
-		Transform(float x, float y);
+		Transform();
 		virtual ~Transform();
 
 		virtual void Intialize() override;
 		virtual void Update() override;
 		virtual void Render(HDC hdc) override;
 
+		void SetPos(math::Vector2& pos) { mPosition = pos; }
 		math::Vector2 GetPos() { return mPosition; }
 
 	private:

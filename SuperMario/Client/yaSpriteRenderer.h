@@ -1,5 +1,5 @@
 #pragma once
-#include"yaComponent.h"
+#include "yaComponent.h"
 #include "yaTransform.h"
 #include "yaGameObject.h"
 
