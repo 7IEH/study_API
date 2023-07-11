@@ -26,6 +26,7 @@ namespace ya
 
 		static Scene* GetCurScene() { return mActiveScene; }
 		static Scene* LoadScene(const std::wstring& name);
+		static void ChangeScene(const std::wstring& name) { LoadScene(name); }
 
 	private:
 		static std::map<std::wstring, Scene*> mScenes;

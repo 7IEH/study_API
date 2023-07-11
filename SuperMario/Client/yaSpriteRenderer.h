@@ -2,6 +2,7 @@
 #include "yaComponent.h"
 #include "yaTransform.h"
 #include "yaGameObject.h"
+#include "yaImage.h"
 
 namespace ya
 {
@@ -15,8 +16,11 @@ namespace ya
 		virtual void Update() override;
 		virtual void Render(HDC hdc) override;
 
-	private:
+		Image* GetImg() { return mImg; }
+		void SetImg(Image* img) { mImg = img; }
 
+	private:
+		Image* mImg;
 	};
 }
 

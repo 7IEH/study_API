@@ -131,6 +131,9 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commoninclude.h" />
     <ClInclude Include="EHObject.h" />
+    <ClInclude Include="yaResource.h" />
+    <ClInclude Include="yaImage.h" />
+    <ClInclude Include="yaResources.h" />
     <ClInclude Include="yaSceneMgr.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
@@ -150,6 +153,9 @@
     <ClInclude Include="yaTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="yaResource.cpp" />
+    <ClCompile Include="yaImage.cpp" />
+    <ClCompile Include="yaResources.cpp" />
     <ClCompile Include="yaSceneMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="yaApplication.cpp" />

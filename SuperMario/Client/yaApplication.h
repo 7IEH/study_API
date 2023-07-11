@@ -23,6 +23,8 @@ namespace ya
 			mVwindowSize.y = other.y;
 		}
 
+		HDC GetMainDC() { return mHdc; }
+
 	private:
 		HWND mHwnd;
 		HDC mHdc;

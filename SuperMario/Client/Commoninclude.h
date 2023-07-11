@@ -9,6 +9,8 @@
 #include "framework.h"
 #include "yaMath.h"
 
+#pragma comment(lib, "Msimg32.lib")
+
 namespace ya::enums
 {
 	enum class eLayerType
